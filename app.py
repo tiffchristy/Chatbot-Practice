@@ -34,7 +34,7 @@ def load_data():
         index = load_index_from_storage(storage_context)
 
         # Load the finetuned model 
-        ft_model_name = "ft:gpt-4.1-mini-2025-04-14:dab07:asa:C1b8U3av"
+        ft_model_name = "ft:gpt-3.5-turbo-0125:dab07:tiffany:C1p3oxW6"
         ft_context = ServiceContext.from_defaults(llm=OpenAI(model=ft_model_name, temperature=0.3), 
         context_window=2048, 
         
@@ -74,6 +74,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
            st.write(response.response)
            # Append the assistant's detailed response to the chat history
            st.session_state.messages.append({"role": "assistant", "content": response.response})
+
 
 
 
